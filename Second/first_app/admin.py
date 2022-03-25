@@ -1,3 +1,5 @@
+from traceback import extract_tb
+
 from django.contrib import admin
 from . import models
 
@@ -5,6 +7,7 @@ from . import models
 
 class BookInline(admin.TabularInline):
     model = models.Book
+    extra = 1
 
 @admin.register(models.Author)
 class AuthorAdmin(admin.ModelAdmin):
